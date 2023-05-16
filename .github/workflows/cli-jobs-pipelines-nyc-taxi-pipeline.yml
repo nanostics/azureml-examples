@@ -20,9 +20,9 @@ on:
       - cli/setup.sh
 
 env:
-  GROUP: summerprojects2023
+  RESOURCE_GROUP_NAME: summerprojects2023
   LOCATION: canadacentral
-  WORKSPACE: Nanostics_ML_Workspace
+  WORKSPACE_NAME: Nanostics_ML_Workspace
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
