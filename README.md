@@ -8,6 +8,11 @@ products:
 description: Top-level directory for official Azure Machine Learning sample code and examples.
 ---
 
+# THIS IS A FORK!
+
+This is a fork of [Azure ML Examples](https://github.com/Azure/azureml-examples), based on ["Use GitHub Actions with Azure Machine Learning
+"](https://learn.microsoft.com/en-us/azure/machine-learning/how-to-github-actions-machine-learning?view=azureml-api-2&tabs=userlevel) for me to learn Github Actions with Azure.
+
 # Azure Machine Learning examples
 
 [![smoke](https://github.com/Azure/azureml-examples/workflows/smoke/badge.svg)](https://github.com/Azure/azureml-examples/actions/workflows/smoke.yml)
