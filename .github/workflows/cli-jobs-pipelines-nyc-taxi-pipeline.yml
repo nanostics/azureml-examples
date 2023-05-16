@@ -24,26 +24,34 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: check out repo
+    - name: Checkout
       uses: actions/checkout@v3
-    - name: azure login
+
+    - name: Azure Login
       uses: azure/login@v1
       with:
-        creds: ${{secrets.AZUREML_CREDENTIALS}}
-    - name: bootstrap resources
+        creds: ${{ secrets.AZUREML_CREDENTIALS }}
+    
+    - name: Azure show
+      run: |
+        az account show
+
+    - name: Bootstrap Resources
       run: |
           echo '${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}';
           bash bootstrap.sh
       working-directory: infra
       continue-on-error: false
-    - name: setup-cli
+
+    - name: Setup CLI
       run: |
           source "${{ github.workspace }}/infra/sdk_helpers.sh";
           source "${{ github.workspace }}/infra/init_environment.sh";
           bash setup.sh
       working-directory: cli
       continue-on-error: true
-    - name: run job
+
+    - name: Run Job
       run: |
           source "${{ github.workspace }}/infra/sdk_helpers.sh";
           source "${{ github.workspace }}/infra/init_environment.sh";
