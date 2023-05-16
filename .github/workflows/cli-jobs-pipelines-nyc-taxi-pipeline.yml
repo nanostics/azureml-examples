@@ -4,6 +4,7 @@
 # Any manual changes will be overwritten if the code is regenerated.
 
 name: cli-jobs-pipelines-nyc-taxi-pipeline
+
 on:
   workflow_dispatch:
   schedule:
@@ -17,9 +18,16 @@ on:
       - .github/workflows/cli-jobs-pipelines-nyc-taxi-pipeline.yml
       - cli/run-pipeline-jobs.sh
       - cli/setup.sh
+
+env:
+  GROUP: summerprojects2023
+  LOCATION: canadacentral
+  WORKSPACE: Nanostics_ML_Workspace
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest

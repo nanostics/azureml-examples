@@ -103,7 +103,7 @@ then
     subscriptionId="${subscriptionId%%[[:cntrl:]]}"
     [[ -z "${subscriptionId}" ]] && echo_warning "Not logged into Azure as expected."
     export SUBSCRIPTION_ID=${subscriptionId}
-    echo_warning "No Azure subscription id [SUBSCRIPTION_ID] specified. Using default subscription id."
+    echo_warning "No Azure subscription id [SUBSCRIPTION_ID] specified. Using default subscription id. $SUBSCRIPTION_ID"
 fi
 
 #login to azure using your credentials
