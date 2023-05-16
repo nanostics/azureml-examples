@@ -23,6 +23,8 @@ env:
   RESOURCE_GROUP_NAME: summerprojects2023
   LOCATION: canadacentral
   WORKSPACE_NAME: Nanostics_ML_Workspace
+  SUBSCRIPTION_ID: "${{ secrets.SUBSCRIPTION_ID }}"
+  REGISTRY_NAME: nanosticsmlregistry
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
